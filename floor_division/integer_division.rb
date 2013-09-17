@@ -78,10 +78,8 @@ module IntegerDivision
   end
 
 
-
-
-
 end
+
 puts IntegerDivision.floor_division(6,5)
 
 
