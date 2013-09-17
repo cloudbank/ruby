@@ -33,9 +33,7 @@ module IntegerDivision
     end
   end
 
-
-
-  def IntegerDivision.floor_division(num,div)
+  def IntegerDivision.floor_division(num,div)
     case
     when (num == nil || div == nil) then raise "Null input"
     when ( div == 0) then raise "Cannot divide by zero"
@@ -43,12 +41,9 @@ module IntegerDivision
     end
     negative = IntegerDivision.isResultNegative?(num,div)
     if ( num.abs > div.abs)
-
-      range = div.abs**2 <= num.abs ? (div.abs..num.abs) : (1..div.abs)
-
-      begin
-
-        quotient = IntegerDivision.binary_search_absolute_division(range.to_a, num.abs, div.abs)
+      range = div.abs**2 <= num.abs ? (div.abs..num.abs) : (1..div.abs)
+      begin
+        quotient = IntegerDivision.binary_search_absolute_division(range.to_a, num.abs, div.abs)
         if (negative)
           quotient =  IntegerDivision.floor( quotient)
         end
@@ -58,16 +53,14 @@ module IntegerDivision
       rescue
         raise "Exception while dividing"
       end
-
-    elsif (num.abs < div.abs)
+    elsif (num.abs < div.abs)
       if (negative)
         return [-1, IntegerDivision.remainder(num, div, -1)]
       else
         return [0, IntegerDivision.remainder(num, div, 0)]
       end
     end
-
-  end
+  end
 
   def IntegerDivision.remainder(num, div, quotient)
     num - (quotient * div)
@@ -81,8 +74,7 @@ module IntegerDivision
 end
 
 puts IntegerDivision.floor_division(6,5)
-
-
+
 puts IntegerDivision.floor_division(6,-5)
 
 puts IntegerDivision.floor_division(-6,5)
