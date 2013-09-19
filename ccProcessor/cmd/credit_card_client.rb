@@ -17,20 +17,14 @@ class CreditCardClient
       if (@ccp.accounts.empty? || !@ccp.accounts.include?(a[1])) && a[0].downcase != 'add'
         raise "File in wrong order"
       end
-
-
       processCmd(a)
 
     }
-
-
   end
-
 
   def printOut
 
     #Law of Demeter refactor?
-
     Hash[@ccp.accounts.sort].each_value { |v|
       puts " #{v.name} : #{ v.balance} "
     }
