@@ -1,3 +1,5 @@
+note: tests are still under refactor from previous
+
 /ccProcessor
   this is a credit card processor that uses luhn10 to verify cc number and 
   process methods as they are called off from a text file
